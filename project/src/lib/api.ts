@@ -1,6 +1,7 @@
 import axios, { type InternalAxiosRequestConfig, type AxiosResponse, type AxiosError } from 'axios';
 
-const API_URL = 'http://localhost:5000/api'; // Explicitly set backend URL
+// Get the API URL from Vite environment or use the proxy path
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const api = axios.create({
   baseURL: API_URL,
