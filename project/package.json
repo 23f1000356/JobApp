@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.80.0",
+    "@types/axios": "^0.9.36",
     "axios": "^1.13.2",
     "dotenv": "^17.2.3",
     "lucide-react": "^0.344.0",
