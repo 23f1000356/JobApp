@@ -1,4 +1,5 @@
-import axios, { type InternalAxiosRequestConfig, type AxiosResponse, type AxiosError } from 'axios';
+import axios from 'axios';
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios';
 
 // Get the API URL from Vite environment or use the proxy path
 const API_URL = import.meta.env.VITE_API_URL || '/api';
@@ -57,8 +58,8 @@ api.interceptors.response.use(
     });
     return response;
   },
-  async (error: AxiosError) => {
-    const originalRequest = error.config as any;
+  async (error: any) => {
+    const originalRequest = error.config;
     
     // Log the error
     console.error('[API] Response Error:', {
